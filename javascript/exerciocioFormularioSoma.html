@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Trabalhando com javascript</title>
+        <meta charset="UTF-8"/>
+        <script>
+            function somar(){
+                const n1 = document.getElementById('n1').value;
+                const n2 = document.getElementById('n2').value;
+                const resultText = n1+n2;
+                const resultNumber = parseFloat(n1) + parseFloat(n2);
+                document.getElementById("resultText").innerHTML= resultText
+                document.getElementById("resultNumber").innerHTML= resultNumber;
+            }
+
+
+        </script>
+    </head>
+    <body> 
+        <form action="">
+            n1: <input type="text" id="n1"/>
+            n2: <input type="text" id="n2"/>
+            <input type="button" value="somar" onclick="somar()"/>
+            <br/>
+            <h1 id="resultText"></h1>
+            <h1 id="resultNumber"></h1>
+
+        </form>
+
+
+    </body>
+    
+</html>
