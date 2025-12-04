@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com ternário</title>
+     <script>
+            const n1= Number(prompt("digite a primeira nota: "));
+            const n2= Number(prompt("digite a segunda nota: ")); 
+            const n3= Number(prompt("digite a terceira nota: "));
+            const n4= Number(prompt("digite a quarta nota: "));
+
+            const media = (n1 + n2 + n3 + n4) / 4;
+            document.write("A média é: ",media +'<br>');
+
+            const result = media >= 7 ? "Aprovado" : media >= 5 && media < 7 ? "Recuperação" : "Reprovado";
+            document.writeln("Aluno foi: ",result);
+      
+
+        </script>
+</head>
+<body>
+    
+</body>
+</html>
