@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Trabalhando com javascript</title>
+        <meta charset="UTF-8">
+        <script>
+            let sal= Number(prompt("digite o salário: "));
+            const cargo= prompt("digite o cargo: ");
+            let aumento = 0;
+            
+
+
+
+            switch(cargo){
+                case 'estagiário':
+                    aumento = '100%';
+                    sal = sal* 2;
+                    break;
+                case 'Analista':
+                    aumento = '50%';
+                    sal = sal* 1.5;
+                    break;
+                case 'Gerente':
+                    aumento = '30%';
+                    sal = sal* 1.3;
+                    break;
+                case 'Presidente':
+                    aumento = '10%';
+                    sal = sal* 1.1;
+                    break;
+                default:
+                    aumento = '0%';
+                    document.writeln("Cargo inválido");
+                    break;                               
+            }
+
+            document.writeln("O aumento foi de: ",aumento); 
+            document.writeln("<br>Novo salário é de: ", sal)
+        </script>
+    </head>
+    <body> 
+
+
+    </body>
+    
+</html>
