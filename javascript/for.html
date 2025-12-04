@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando FOR</title>
+     <script>
+       
+        let cont = 1;
+        for (cont = 1;cont <= 5;cont ++){
+            document.write('<br>',cont);
+        }
+        document.write('<br>',cont);
+
+        let soma= 0;
+        const qtd = parseInt(prompt("Digite a quantidade de nota: "));
+        for(let i = 1; i <= qtd; i++){
+            soma += parseFloat(prompt("Digita a nota" + i));         
+
+        }
+
+        document.write("<br> A soma das notas é:",soma ," e a média é: ", (soma / qtd));
+
+     </script>
+</head>
+<body>
+    
+</body>
+</html>
