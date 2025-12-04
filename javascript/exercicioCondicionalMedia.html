@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Trabalhando com javascript</title>
+        <meta charset="UTF-8">
+        <script>
+            const n1= Number(prompt("digite a primeira nota: "));
+            const n2= Number(prompt("digite a segunda nota: ")); 
+            const n3= Number(prompt("digite a terceira nota: "));
+            const n4= Number(prompt("digite a quarta nota: "));
+
+            const media = (n1 + n2 + n3 + n4) / 4;
+            document.write("A média é: ",media +'<br>');
+
+
+            if(media< 5){
+                document.writeln("Reprovado");
+            }else if(media >= 5 && media < 7){
+                document.writeln("Recuperação");
+            }else{
+                document.writeln("Aprovado");
+            }
+
+        </script>
+    </head>
+    <body> 
+
+
+    </body>
+    
+</html>
