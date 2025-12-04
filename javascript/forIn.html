@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando FOR</title>
+     <script>
+        let pessoas = [
+            {
+                nome: "Ana",
+                idade: 25,
+                cidade: "São Paulo"
+            },
+            {
+                nome: "vitor",
+                idade: 25,
+                cidade: "São Paulo"
+            }
+        ]
+        
+        for (let chave in pessoas){
+            document.write(' ',pessoas[chave])
+        }
+
+        document.write(" <br> Trabalhando da forma certa: <br> ")
+
+        for (let pessoa of pessoas){
+            document.write(pessoa.nome)
+            for (let chave in pessoa){
+                document.write(' ',chave,': ',pessoa[chave])
+            }
+            document.write("<br>")
+        }
+
+
+     </script>
+</head>
+<body>
+    
+</body>
+</html>
