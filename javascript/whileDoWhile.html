@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estruturas de Repetição</title>
+     <script>
+        let cont = 0;
+        do {
+            document.writeln("<br>contador é: ", cont);
+            cont ++;
+        }while(cont < 10);
+
+        while(cont < 20){
+            document.writeln("<br>contador é: ",cont);
+            cont ++;
+        }
+
+        const qtd = parseInt(prompt("Digite a quantidade de repetições: "));
+        let notas;
+        cont = 0;
+        let soma = 0;
+
+        while(cont < qtd){
+            nota = parseInt(prompt("Digite a nota: "));
+            soma += nota;
+            cont ++;
+        }
+
+        document.write("<br> A soma das notas é: ", soma , " e a média é: ", (soma / qtd));
+     </script>
+</head>
+<body>
+    
+</body>
+</html>
