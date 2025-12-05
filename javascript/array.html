@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Trabalhando com Arrays</title>
+        <script>
+            const carros = ["GOL","FUSCA","KA","Virtus"]
+
+            // navegando pelo index
+            document.write(carros[2])
+
+            for(let i =0; i<4; i++ ){
+                document.write('<br>',carros[i])
+            }
+            document.write('<br> <br> usando FOR IN')
+
+            for(let i in carros){          
+                document.write('<br>',i,carros[i])
+            }
+
+            document.write('<br> <br> usando FOR OF')
+            for(let carro of carros){          
+                document.write('<br>',carro)
+            }
+
+            document.write('<br> <br> ADD NO FINAL COM PUSH')
+
+            //add no final;
+            carros.push("FIESTA")
+            for(let carro of carros){          
+                document.write('<br>',carro)
+            }
+
+            document.write('<br> <br> ADD NO INICIO COM UNSHIFT')
+
+            //add no inicio;
+            carros.unshift("COROLLA")
+            for(let carro of carros){          
+                document.write('<br>',carro)
+            }
+
+
+            document.write('<br> <br> REMOVE NO INICIO COM SHIFT')
+            //remove no inicio;
+            carros.shift()
+            for(let carro of carros){          
+                document.write('<br>',carro)
+            }
+
+            document.write('<br> <br> REMOVE NO FIM COM POP')
+            //remove no inicio;
+            const removido = carros.pop()
+            for(let carro of carros){          
+                document.write('<br>',carro)     
+
+            }
+
+            document.write('<br> item removido: ',removido)
+
+            document.write('<br> <br> SPLICE')
+            // removendo com splice.
+
+            // apartir da posição 1 exclui 1
+            carros.splice(1,1)
+            for(let carro of carros){          
+                document.write('<br>',carro)     
+
+            }
+
+
+        </script>
+    </head>
+</html>
