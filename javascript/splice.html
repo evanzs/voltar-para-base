@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Trabalhando com Arrays</title>
+        <script>
+            let carros = ["GOL","FUSCA","KA","Virtus"]
+
+            document.write('<br> <br> SPLICE')
+            // removendo com splice.
+
+            // apartir da posição 1 exclui 1
+            carros.splice(1,1)
+            for(let carro of carros){          
+                document.write('<br>',carro)     
+            }
+
+            document.write('<br> <br> SPLICE')
+            carros = ["GOL","FUSCA","KA","Virtus"]
+            // apartir da posição 1 exclui 2 itens
+            carros.splice(1,2)
+            for(let carro of carros){          
+                document.write('<br>',carro)     
+            }
+
+
+            document.write('<br> <br> SPLICE')
+            carros = ["GOL","FUSCA","KA","Virtus"]
+            // apartir da posição 1 não exclui nenhum e  add outro item
+            carros.splice(1,0,"YARIS")
+            for(let carro of carros){          
+                document.write('<br>',carro)     
+            }
+
+            document.write('<br> <br> SPLICE')
+ 
+            // apartir da posição 1 exclui 1 e  add outro item (SUBSTITUI)
+            carros.splice(3,1,"YARIS 2")
+            for(let carro of carros){          
+                document.write('<br>',carro)     
+            }
+
+
+
+
+        </script>
+    </head>
+</html>
