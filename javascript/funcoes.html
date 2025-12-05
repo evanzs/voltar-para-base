@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Trabalhando com Funções</title>
+        <script type="text/javascript" src="./js/funcoes.js"></script>
+        <script>
+
+          function calcularSoma(){
+            const n1 = Number(document.getElementById('num1').value)
+            const n2 = Number(document.getElementById('num2').value)
+            const n3 = Number(document.getElementById('num3').value)
+            const n4 = Number(document.getElementById('num4').value)
+            const soma = n1 + n2 +n3 + n4;
+            document.getElementById('resultado').innerHTML = soma;
+
+          }
+
+            function executarCalculo(operacao) {
+                const n1 = Number(document.getElementById('num1').value)
+                const n2 = Number(document.getElementById('num2').value)
+                const n3 = Number(document.getElementById('num3').value)
+                const n4 = Number(document.getElementById('num4').value)    
+
+                let resultado = calcular(operacao,n1,n2,n3,n4);
+                document.getElementById('resultadoFora').innerHTML = resultado;
+
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1>Calculadora de Soma</h1>
+        <form>
+            <label>Número 1: <input type="number" id="num1"></label><br><br>
+            <label>Número 2: <input type="number" id="num2"></label><br><br>
+            <label>Número 3: <input type="number" id="num3"></label><br><br>
+            <label>Número 4: <input type="number" id="num4"></label><br><br>
+            <button type="button" onclick="calcularSoma()">Somar</button>
+            <button type="button" onclick="somar()">Somar</button>
+            <br>
+        <hr>
+            <button type="button" onclick="executarCalculo('+')">Somar</button>
+            <button type="button" onclick="executarCalculo('-')">Subtração</button>
+            <button type="button" onclick="executarCalculo('/')">Divisao</button>
+            <button type="button" onclick="executarCalculo('*')">Multiplicação</button>
+            <button type="button" onclick="executarCalculo('%')">MOD</button>
+
+
+
+        </form>
+        <h2 id="resultado"></h2>
+        <h2 id="resultadoFora"></h2>
+
+    </body>
+</html>
