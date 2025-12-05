@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Trabalhando com ARRAY</title>
+        <script>
+            let notas =[]
+            console.table("inicio",notas)
+
+            for(let i =0; i<=4; i++){
+                let nota = parseInt(prompt("Digite notas"))
+                notas.push(nota)
+            }
+
+
+            console.table(notas)
+
+            let pessoas = [
+                {
+                    nome: "João",
+                    idade: 25,
+                    cidade: "São Paulo",
+                    profissao: "Desenvolvedor"
+                },
+                {
+                    nome: "Maria",
+                    idade: 30,
+                    cidade: "Rio de Janeiro",
+                    profissao: "Designer"
+                },
+                {
+                    nome: "Pedro",
+                    idade: 28,
+                    cidade: "Belo Horizonte",
+                    profissao: "Analista"
+                }
+            ];
+
+
+            console.table(pessoas);
+            console.table(pessoas[1]);
+            console.table(pessoas[1]['nome']);
+            console.table(pessoas[1].idade);
+    
+
+
+        </script>
+    </head>
+</html>
