@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Trabalhando com trabalhando com recursividade</title>
+        <script type="text/javascript" src="./js/funcoes.js"></script>
+        <script> 
+
+        const fatorial = function(x){
+            if(x<1){
+                return 1
+            }
+            return x * fatorial(x-1)
+        }
+
+        console.log(fatorial(5))
+        console.log(fatorialFora(5))
+        console.log(fatorialForaDois(5))
+        console.log(fatorialForaTres(5))
+
+
+
+        </script>
+    </head>
+</html>
