@@ -16,4 +16,20 @@ const calcularTotal = () => {
     soma = soma + qtd.innerHTML*valor.innerHTML; 
     total.innerHTML= soma;
 
+    calcularSubTotal();
+    
+}
+
+
+const calcularSubTotal = () => {
+    let soma = 0;
+    for (let produtoId = 1; produtoId <= 3; produtoId++){
+        
+        console.log( Number(document.getElementById('total-'+produtoId).innerHTML))
+
+        soma += soma + Number(document.getElementById('total-'+produtoId).innerHTML)
+        console.log(soma);
+    }
+
+    document.getElementById('subTotal').innerHTML = soma;
 }
