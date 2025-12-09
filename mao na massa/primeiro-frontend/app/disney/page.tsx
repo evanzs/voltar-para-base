@@ -4,7 +4,10 @@ import { useEffect, useState } from 'react'
 import { Card, Button, Row, Col } from 'react-bootstrap'
 
 interface Hero {
-  [key: string]: any;
+  _id:string;
+  name:string,
+  imageUrl:string,
+  films:[string],
 }
 
 const page = () => {
