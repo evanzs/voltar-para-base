@@ -12,59 +12,71 @@
 </head>
 <body>
     <div class="container">
-        <h2 class="estilo-titulo text-center"><i class="bi bi-cart"></i> Lojinha da Unidade</h2>
+        <h2 class="estilo-titulo text-center">
+            <i class="bi bi-cart"></i> Lojinha da Unidade
+        </h2>
         <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Imagem</th>
-                <th>Produto</th>
-                <th>Preço</th>
-                <th>Qtd</th>
-                <th>Total</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-            <td><img src="./img/produto-1.jpeg" alt="Produto 1" width="200"></td>
-            <td><span class="estilo-produto">Celular</span></td>
-            <td>R$ <span id="valor-1">3000</span></td>
-            <td>
-            <span class="bagde rounded-pill text-bg-danger" onclick="atualizaQtd(1,'-')"><i class="bi bi-dash"></i></span>
-            <span id="qtd-1">3</span> 
-            <span class="bagde rounded-pill text-bg-success" onclick="atualizaQtd(1,'+')"><i class="bi bi-plus"></i></span>
-            </td>
-            <td id="total-1">3</td>
-            </tr>
-            <tr>
-            <td><img src="./img/produto-2.jpeg" alt="Produto 2" width="200"></td>
-            <td><span class="estilo-produto">Notebook</span></td>
-            <td>R$ <span id="valor-2">3000</span></td>
-            <td>
-            <span class="bagde rounded-pill text-bg-danger" onclick="atualizaQtd(2,'-')"><i class="bi bi-dash"></i></span>
-            <span id="qtd-2">2</span> 
-            <span class="bagde rounded-pill text-bg-success" onclick="atualizaQtd(2,'+')"><i class="bi bi-plus"></i></span>
-            </td>
-            <td id="total-2">3</td>
-            </tr>
-            <tr>
-            <td><img src="./img/produto-1.jpeg" alt="Produto 3" width="200"></td>
-            <td><span class="estilo-produto">Celular</span></td>
-            <td> R$ <span id="valor-3">5000</span></td>
-            <td>
-            <span class="bagde rounded-pill text-bg-danger" onclick="atualizaQtd(3,'-')"><i class="bi bi-dash"></i></span>
-            <span id="qtd-3">3</span> 
-            <span class="bagde rounded-pill text-bg-success" onclick="atualizaQtd(3,'+')"><i class="bi bi-plus"></i></span>
-            </td>
-            <td id="total-3">0</td>
-            </tr>
-        </tbody>
-
-    </table>
-    <footer class="text-center p-3 fs-2 text-info">
-        <i class="bi bi-cart-check fs-3"></i> subtotal: R$ 
-         <span class="" id="subTotal"> 0</span>
-
-    </footer>
+            <thead>
+                <tr>
+                    <th>Imagem</th>
+                    <th>Produto</th>
+                    <th>Preço</th>
+                    <th>Qtd</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="./img/produto-1.jpeg" alt="Produto 1" width="200"></td>
+                    <td><span class="estilo-produto">Celular</span></td>
+                    <td>R$ <span id="valor-1">3000</span></td>
+                    <td>
+                        <span class="bagde rounded-pill text-bg-danger" onclick="atualizaQtd(1,'-')">
+                            <i class="bi bi-dash"></i>
+                        </span>
+                        <span id="qtd-1">3</span>
+                        <span class="bagde rounded-pill text-bg-success" onclick="atualizaQtd(1,'+')">
+                            <i class="bi bi-plus"></i>
+                        </span>
+                    </td>
+                    <td id="total-1">3</td>
+                </tr>
+                <tr>
+                    <td><img src="./img/produto-2.jpeg" alt="Produto 2" width="200"></td>
+                    <td><span class="estilo-produto">Notebook</span></td>
+                    <td>R$ <span id="valor-2">3000</span></td>
+                    <td>
+                        <span class="bagde rounded-pill text-bg-danger" onclick="atualizaQtd(2,'-')">
+                            <i class="bi bi-dash"></i>
+                        </span>
+                        <span id="qtd-2">2</span>
+                        <span class="bagde rounded-pill text-bg-success" onclick="atualizaQtd(2,'+')">
+                            <i class="bi bi-plus"></i>
+                        </span>
+                    </td>
+                    <td id="total-2">3</td>
+                </tr>
+                <tr>
+                    <td><img src="./img/produto-1.jpeg" alt="Produto 3" width="200"></td>
+                    <td><span class="estilo-produto">Celular</span></td>
+                    <td>R$ <span id="valor-3">5000</span></td>
+                    <td>
+                        <span class="bagde rounded-pill text-bg-danger" onclick="atualizaQtd(3,'-')">
+                            <i class="bi bi-dash"></i>
+                        </span>
+                        <span id="qtd-3">3</span>
+                        <span class="bagde rounded-pill text-bg-success" onclick="atualizaQtd(3,'+')">
+                            <i class="bi bi-plus"></i>
+                        </span>
+                    </td>
+                    <td id="total-3">0</td>
+                </tr>
+            </tbody>
+        </table>
+        <footer class="text-center p-3 fs-2 text-info">
+            <i class="bi bi-cart-check fs-3"></i> subtotal: R$
+            <span class="" id="subTotal">0</span>
+        </footer>
     </div>
 </body>
 </html>
