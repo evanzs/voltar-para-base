@@ -2,7 +2,7 @@
 //import item CORE
 const {PI} = Math
 
-export class Circulo {
+export class CirculoModulo {
     constructor(raio){
         this.raio = raio;
     }
