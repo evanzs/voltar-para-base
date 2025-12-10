@@ -46,3 +46,9 @@ const fatorialForaDois = (x) => (x == 1 ? 1 : x * fatorialFora(x-1));
 // quando for só uma linha pode ser direto assim:
 const fatorialForaTres = (x) => x == 1 ? 1 : x * fatorialFora(x-1)
 
+function xyz(n) {
+    if(n%2 == 0)
+        return --n;
+    else
+        return ++n
+}
