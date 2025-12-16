@@ -1,0 +1,56 @@
+{
+    "swagger":"2.0",
+    "info":{
+        "title": "Produtos",
+        "description": "API destinada a trabalhar com expresse e sequelize.",
+        "version":"1.0"
+    },
+    "host":  "localhost:3000",
+    "basePath": "/produtos", 
+    "schemes": [
+        "https",
+        "http"
+    ],
+    "paths":{
+        "/": {
+            "get": {
+                "tags": [
+                    "produtos"
+                ],
+                "summary": "listagem de produtos",
+                "description": "",
+                "operationId": "LIST",       
+                "produces": [
+                    "application/json"
+                ],   
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/ApiResponse"
+                        }
+                    }
+                }               
+               
+            }
+        },
+        "definitions": {
+            "ApiResponse": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+
+}
