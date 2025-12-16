@@ -10,21 +10,24 @@ const port = 3000
 
 
 app.use(bodyParser.json());
-app.use(cors({origin:'*'})); // define qual a origem será aceita, todavia nesse caso será todas. 
+
+app.use(cors({
+    origin: '*',                 // ou domínio específico
+    methods: ['GET','POST', 'PUT', 'DELETE'], // POST NÃO permitido
+}));
 
 
+app.use('/produtos', produtoController)// define a roda
 
-app.use('/produtos',produtoController)// define a roda
 
-
-app.get('/',(req,res) => {
-    res.json({mensagem:"Hello WOrld"});
+app.get('/', (req, res) => {
+    res.json({ mensagem: "Hello WOrld" });
     res.end(); // termina a conexao
 })
 
 
 
-app.listen(port,() => {
-    console.log("Servidor executando na porta:",port)
+app.listen(port, () => {
+    console.log("Servidor executando na porta:", port)
 });
 
