@@ -1,25 +1,24 @@
 import express from 'express'
 import produtoController from './controllers/produto-controller.js'
-
+import bodyParser from 'body-parser'
 
 const app = express();
 
 const port = 3000
 
 
-app.use(express.json())
+app.use(bodyParser.json());
+app.use(cors({origin:'*'})); // define qual a origem será aceita, todavia nesse caso será todas. 
 
-app.use('/produtos',produtoController)
+
+
+app.use('/produtos',produtoController)// define a roda
+
+
 app.get('/',(req,res) => {
     res.json({mensagem:"Hello WOrld"});
     res.end(); // termina a conexao
 })
-
-
-// app.get('/produtos', async (req,res) =>{
-//     const produtos = await getAll();
-//     res.json(produtos)
-// })
 
 
 
