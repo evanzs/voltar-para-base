@@ -1,6 +1,8 @@
 import express from 'express'
 import produtoController from './controllers/produto-controller.js'
 import bodyParser from 'body-parser'
+import cors from 'cors'
+
 
 const app = express();
 
