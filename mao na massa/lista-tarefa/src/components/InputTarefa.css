@@ -1,0 +1,11 @@
+.input-nova-tarefa {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding:10px;
+  background-color: #8cc0f7;
+
+
+  width: 50%;
+  align-items: center;
+}
