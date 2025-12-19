@@ -33,8 +33,7 @@
   display: flex;
   flex-direction:column;
   align-items: center;
-  min-width: 550px;
-  
+  min-width: 550px; 
   
 }
 
@@ -76,14 +75,14 @@
   gap:5px;
 }
  
-.container-titulo {
+/* .container-titulo {
   width: 100%;  
   height: 100%;
   flex-direction: row;
   background-color: rgb(210, 235, 248);
   border-radius: 5px;
   padding: 5px;  
-}
+} */
 .container-btn {
   margin-top: 10px;
   margin-bottom: 10px;
