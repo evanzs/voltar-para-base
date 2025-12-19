@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import './App.css';
+import InputTarefa from './components/InputTarefa';
+import CardTarefa from './components/CardTarefa';
 
 
 function App() {
@@ -11,45 +13,15 @@ function App() {
 
   const [inputTarefa, setInputTarefa] = useState('')
 
-  const addNovaTarefa = () => {
-    if (!inputTarefa) return;
-    const index = tarefas.length + 1;
-    const tarefa = { id: index, titulo: inputTarefa, completo: false }
-    setTarefas([...tarefas, tarefa])
-    setInputTarefa('')
-  }
-  const concluirTarefa = (id) => {
-    tarefas[id - 1].completo = true;
-    setTarefas([...tarefas])
-  }
+
 
   return (
     <div className="App container-principal">
-      <div className="input-nova-tarefa">
-        {inputTarefa}
-        <p>Nova Tarefa</p>
-        <input type="text" value={inputTarefa} onChange={(e) => setInputTarefa(e.target.value)}></input>
-        <button onClick={addNovaTarefa}>Add Tarefa</button>
-      </div>
-      <div className="container-lista">
-        <h3>Lista de tarefas pendente:</h3>
-        {tarefas.map((tarefa) => (
-          (!tarefa.completo &&
-            <div key={tarefa.id} className="container-tarefa">
-              <div className="container-titulo">{tarefa.id} - {tarefa.titulo}</div>
-              {/* chama só com o click */}
-              <div className="container-btn">
-                <button onClick={() => concluirTarefa(tarefa.id)}>Finalizar</button>
-              </div>
-              {/* assim chama o click logo que a tela rendereizar:
-              <button onClick={concluirTarefa(tarefa.id)}>Finalizar</button> */}
-            </div>
+      <InputTarefa inputTarefa={inputTarefa} setInputTarefa={setInputTarefa} tarefas={tarefas} setTarefas={setTarefas} ></InputTarefa>
+      <CardTarefa titulo="Tarefas pendentes" tarefas={tarefas.filter(tarefa => !tarefa.completo)} setTarefas={setTarefas}/>
+      <CardTarefa titulo="Tarefas Finalizadas" tarefas={tarefas.filter(tarefa => tarefa.completo)} setTarefas={setTarefas}/>
 
-          )
-        ))}
-      </div>
-
-      <div className="container-lista">
+      {/* <div className="container-lista">
         <h3>Lista de tarefas finalizadas:</h3>
         {tarefas.map((tarefa) => (
           (tarefa.completo &&
@@ -62,7 +34,7 @@ function App() {
           </div>
         )
         ))}
-      </div>
+      </div> */}
 
 
     </div>
