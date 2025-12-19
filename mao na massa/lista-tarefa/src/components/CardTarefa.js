@@ -1,17 +1,21 @@
-      <div className="container-lista">
-        <h3>Lista de tarefas pendente:</h3>
-        {tarefas.map((tarefa) => (
-          (!tarefa.completo &&
-            <div key={tarefa.id} className="container-tarefa">
-              <div className="container-titulo">{tarefa.id} - {tarefa.titulo}</div>
-              {/* chama só com o click */}
-              <div className="container-btn">
-                <button onClick={() => concluirTarefa(tarefa.id)}>Finalizar</button>
-              </div>
-              {/* assim chama o click logo que a tela rendereizar:
-              <button onClick={concluirTarefa(tarefa.id)}>Finalizar</button> */}
-            </div>
+import React from 'react'
+import Tarefa  from './Tarefa';
+export default function CardTarefa({titulo,tarefas,setTarefas}) {
 
-          )
+    const concluirTarefa = (id) => {
+      tarefas[id - 1].completo = true;
+      setTarefas([...tarefas])
+    }
+  
+
+  return (
+          <div className="container-lista">
+        <h3>{titulo}:</h3>
+        {tarefas.map((tarefa) => (
+          
+        <Tarefa tarefa={tarefa} concluirTarefa={concluirTarefa}/>
+        
         ))}
       </div>
+  )
+}
