@@ -1,6 +1,14 @@
-import React from 'react'
 
-export default function InputTarefa() {
+export default function InputTarefa({inputTarefa,setInputTarefa,tarefas,setTarefas}) {
+
+    const addNovaTarefa = () => {
+    if (!inputTarefa) return;
+    const index = tarefas.length + 1;
+    const tarefa = { id: index, titulo: inputTarefa, completo: false }
+    setTarefas([...tarefas, tarefa])
+    setInputTarefa('')
+  }
+
   return (
       <div className="input-nova-tarefa">
         {inputTarefa}
