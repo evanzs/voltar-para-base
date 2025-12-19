@@ -1,13 +1,16 @@
 import React from 'react'
-
-export default function Tarefa() {
+import './Tarefa.css'
+export default function Tarefa({tarefa,concluirTarefa}) {
     return (
         <div key={tarefa.id} className="container-tarefa">
-            <div className="container-titulo">{tarefa.id} - {tarefa.titulo}</div>
+            <div className={tarefa.completo? 'container-titulo-finalizado'  : 'container-titulo' }>{tarefa.id} - {tarefa.titulo}</div>
             {/* chama só com o click */}
+            {tarefa.completo ? 
+            <i className="fa-solid fa-check"></i>
+            :  
             <div className="container-btn">
                 <button onClick={() => concluirTarefa(tarefa.id)}>Finalizar</button>
-            </div>
+            </div>}
             {/* assim chama o click logo que a tela rendereizar:
               <button onClick={concluirTarefa(tarefa.id)}>Finalizar</button> */}
         </div>
