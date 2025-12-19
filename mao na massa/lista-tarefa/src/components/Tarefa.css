@@ -1,0 +1,41 @@
+.container-tarefa {
+  font-weight:bold;
+
+  border-radius: 10px;
+  border: 1px solid black;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 50%;
+  margin-bottom:10px;
+  padding:5px;
+  gap:5px;
+}
+ 
+.container-titulo {
+  width: 100%;  
+  height: 100%;
+  flex-direction: row;
+  background-color: rgb(210, 235, 248);
+  border-radius: 5px;
+  padding: 5px;  
+}
+
+
+.container-tarefa-finalizada {
+  font-weight:bold;
+  border-radius: 10px;
+  border: 1px solid rgb(192, 61, 61);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color:rgb(192, 61, 61);
+
+  width: 50%;
+  margin-bottom:10px;
+  padding:5px;
+  gap:5px;
+}
