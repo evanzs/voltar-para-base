@@ -1,10 +1,13 @@
-import { useState } from 'react'
+import { useState, createContext } from 'react'
 import './App.css';
 import InputTarefa from './components/InputTarefa';
 import CardTarefa from './components/CardTarefa';
 import NavBar from './components/css-module/NavBar'
-import BotaoCustom from './components/css-styled-components/BotaoCustom';
 import styled from 'styled-components'
+import CardTarefaUseContext from './components/CardTarefaUseContext.js';
+
+export const TarefasContexto = createContext(null)
+
 
 function App() {
   const [tarefas, setTarefas] = useState([
@@ -19,12 +22,16 @@ function App() {
 
 
   return (
-    
+
     <div className="App container-principal">
       <NavBar></NavBar>
       <InputTarefa inputTarefa={inputTarefa} setInputTarefa={setInputTarefa} tarefas={tarefas} setTarefas={setTarefas} ></InputTarefa>
-      <CardTarefa titulo="Tarefas pendentes" tarefas={tarefas.filter(tarefa => !tarefa.completo)} setTarefas={setTarefas}/>
-      <CardTarefa titulo="Tarefas Finalizadas" tarefas={tarefas.filter(tarefa => tarefa.completo)} setTarefas={setTarefas}/>
+      <CardTarefa titulo="Tarefas pendentes" tarefasFiltrada={tarefas.filter(tarefa => !tarefa.completo)} tarefas={tarefas} setTarefas={setTarefas} />
+      <CardTarefa titulo="Tarefas Finalizadas" tarefasFiltrada={tarefas.filter(tarefa => tarefa.completo)} tarefas={tarefas} setTarefas={setTarefas} />
+      <TarefasContexto.Provider value={[tarefas, setTarefas]} >
+        <CardTarefaUseContext titulo="Tarefas Finalizadas com USECONTEXT"/>
+      </TarefasContexto.Provider>
+
       <BotaoCustom>Teste de Styled components</BotaoCustom>
       {/* <div className="container-lista">
         <h3>Lista de tarefas finalizadas:</h3>
