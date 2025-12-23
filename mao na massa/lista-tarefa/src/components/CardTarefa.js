@@ -1,19 +1,12 @@
 import React from 'react'
 import Tarefa  from './Tarefa';
-export default function CardTarefa({titulo,tarefas,setTarefas}) {
-
-    const concluirTarefa = (id) => {
-      tarefas[id - 1].completo = true;
-      setTarefas([...tarefas])
-    }
-  
-
+export default function CardTarefa({titulo,tarefasFiltrada,tarefas,setTarefas}) {
   return (
           <div className="container-lista">
         <h3>{titulo}:</h3>
-        {tarefas.map((tarefa) => (
+        {tarefasFiltrada.map((tarefa) => (
           
-        <Tarefa tarefa={tarefa} concluirTarefa={concluirTarefa}/>
+        <Tarefa key={tarefa.id} tarefa={tarefa}  tarefas={tarefas} setTarefas={setTarefas}/>
         
         ))}
       </div>
