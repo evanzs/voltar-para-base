@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>    
+        <title>Pomodoro Vanilla</title>
+        <script type="text/javascript" src="./func.js"></script>
+        <script>
+        var intervaloId;
+        var tempoContagem ='00:03'
+        var tempoDescanso = '00:04'
+        var descanso = false;
+
+        function handleMouseMovePomodoro(){
+            const inputNumberRange = document.getElementById('inputNumberRange');
+            const inputHora = document.getElementById('inputHora')
+            const rangeValue = document.getElementById('range1').value;
+
+            inputNumberRange.innerText = rangeValue;
+        }
+
+        function handleMouseMoveSleep(){
+            const inputNumberRange = document.getElementById('inputNumberRangeSleep');
+            const inputHora = document.getElementById('inputHora')
+            const rangeValue = document.getElementById('rangeSleep').value;
+
+            inputNumberRangeSleep.innerText = rangeValue;
+        }
+
+        function carregar(){
+            let inputHora = document.getElementById('inputHora')
+            inputHora.innerText = tempoContagem
+            const intervalId = setInterval( () => {
+                let inputHora = document.getElementById('inputHora')
+                let min = Number(inputHora.innerText.replace('00:',''))
+
+                if(min == 0 ){
+                    descanso = !descanso
+                    clearInterval(intervalId);
+                    playAlert();
+                    salvaLogs();
+                    inputHora.innerText = descanso ? tempoDescanso : tempoContagem
+                    
+                }else{
+                    subMinutos(min); 
+                }                  
+
+            },1000)      
+
+        }
+
+        function subMinutos(min){            
+            min = min - 1;
+            min <= 9 ? inputHora.innerText = '00:0' + min : inputHora.innerText = '00:' + min            
+        }
+
+        function pararContagem(){
+            clearInterval(intervalId)
+        }
+
+        function playAlert(){
+            const audio = new Audio ('alert.mp3');
+            audio.play()
+        }
+
+        </script>
+    </head>
+    <body>
+        <h3><span id="inputHora"></span> min</h3> 
+        <button onclick="carregar()">INICIAR</button>
+        <button onclick="pararContagem()">PARAR</button>
+        <label for="range1">Tempo pomodoro.</label>
+        <span id="inputNumberRange">30</span>
+        <input type="range" id="range1" min="0" max="59" onmousemove="handleMouseMovePomodoro()" step="1" value="30"/>
+        <span id="inputNumberRangeSleep">10</span>
+        <input type="range" id="rangeSleep" min="0" max="59" onmousemove="handleMouseMoveSleep()" step="1" value="10"/>
+    </body>    
+</html>
