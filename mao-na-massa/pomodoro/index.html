@@ -11,23 +11,29 @@
 
         function handleMouseMovePomodoro(){
             const inputNumberRange = document.getElementById('inputNumberRange');
-            const inputHora = document.getElementById('inputHora')
             const rangeValue = document.getElementById('range1').value;
 
             inputNumberRange.innerText = rangeValue;
+            tempoContagem = rangeValue;
         }
 
         function handleMouseMoveSleep(){
             const inputNumberRange = document.getElementById('inputNumberRangeSleep');
-            const inputHora = document.getElementById('inputHora')
             const rangeValue = document.getElementById('rangeSleep').value;
 
             inputNumberRangeSleep.innerText = rangeValue;
+            tempoDescanso = rangeValue;
+        }
+
+        function handleChangePomodoro(){
+            const inputNumberRange = document.getElementById('inputNumberRange');
+            const rangeValue = document.getElementById('range1').value;
+
+            inputTimePomodoro(rangeValue)
         }
 
         function carregar(){
             let inputHora = document.getElementById('inputHora')
-            inputHora.innerText = tempoContagem
             const intervalId = setInterval( () => {
                 let inputHora = document.getElementById('inputHora')
                 let min = Number(inputHora.innerText.replace('00:',''))
@@ -37,7 +43,7 @@
                     clearInterval(intervalId);
                     playAlert();
                     salvaLogs();
-                    inputHora.innerText = descanso ? tempoDescanso : tempoContagem
+                    inputHora.innerText = descanso ? inputTimePomodoro(tempoDescanso) : inputTimePomodoro(tempoContagem)
                     
                 }else{
                     subMinutos(min); 
@@ -49,7 +55,7 @@
 
         function subMinutos(min){            
             min = min - 1;
-            min <= 9 ? inputHora.innerText = '00:0' + min : inputHora.innerText = '00:' + min            
+            inputTimePomodoro(min)           
         }
 
         function pararContagem(){
@@ -61,15 +67,19 @@
             audio.play()
         }
 
+        function inputTimePomodoro(time){
+            time <= 9 ? inputHora.innerText = '00:0' + time : inputHora.innerText = '00:' + time        
+        }
+
         </script>
     </head>
     <body>
-        <h3><span id="inputHora"></span> min</h3> 
+        <h3><span id="inputHora">00:30</span> min</h3> 
         <button onclick="carregar()">INICIAR</button>
         <button onclick="pararContagem()">PARAR</button>
         <label for="range1">Tempo pomodoro.</label>
         <span id="inputNumberRange">30</span>
-        <input type="range" id="range1" min="0" max="59" onmousemove="handleMouseMovePomodoro()" step="1" value="30"/>
+        <input type="range" id="range1" min="0" max="59" onmousemove="handleMouseMovePomodoro()"  onchange="handleChangePomodoro()" step="1" value="30"/>
         <span id="inputNumberRangeSleep">10</span>
         <input type="range" id="rangeSleep" min="0" max="59" onmousemove="handleMouseMoveSleep()" step="1" value="10"/>
     </body>    
